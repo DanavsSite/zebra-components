@@ -1,0 +1,8 @@
+export interface Styles
+    name?:string;
+    variant:Variant[];
+    defaultCss:string;
+
+export interface Variant 
+    name:string;
+    css:string;

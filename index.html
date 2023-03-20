@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Lit + TS</title>
+   <style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+    *{
+      font-family: 'Poppins', sans-serif;
+    }
+   </style>
+    <script type="module" src="/src/wc/za-btn.ts"></script>
+    <script type="module" src="/src/wc/za-modal.ts"></script>
+  </head>
+  <body>
+    <section id="buttonTypes">
+
+      <h1>Button Types:</h1>
+      <div style="display: grid; gap:20px;grid-template-columns: auto auto auto;">
+
+      <za-btn tooltip="Meow" type="primary" >
+        <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+        
+        Primary & Open Modal
+        <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+        
+      </za-btn>
+      <za-btn tooltip="Meow" type="secondary" >
+        <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+        
+        Secondary
+        <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+        
+      </za-btn>    <za-btn tooltip="Meow" type="teritary" >
+        <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+        
+        Teritary
+        <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+        
+      </za-btn>    <za-btn tooltip="Meow" type="danger" >
+        <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+        
+        Danger
+        <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+        
+      </za-btn>    <za-btn tooltip="Meow" type="info" >
+        <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+        
+        Info
+        <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+        
+      </za-btn>    <za-btn tooltip="Meow" type="success" >
+        <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+        
+              Success
+              <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+              
+            </za-btn>    <za-btn tooltip="Meow" type="yellow" >
+              <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+              
+              Yellow
+              <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+              
+            </za-btn>    <za-btn tooltip="Meow" type="pink" >
+              <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+              
+              Purple
+              <iconify-icon icon="material-symbols:open-in-new"></iconify-icon>
+              
+            </za-btn>
+          </div>
+        </section>
+          <za-modal style="width:50%; border-radius: 40px;">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora ad debitis doloribus! Reiciendis, amet facere? A illo atque labore, consequuntur voluptate dolores quidem unde commodi harum veniam maiores ut ipsum?
+            <br>
+            <div style="display: flex; background-color: transparent;color:white;gap:1em;margin-top:2em;float: right;">
+              
+              <za-btn id="closebtn"  style="font-size:0.55em; color:red">Decline</za-btn>
+              <za-btn style="font-size:0.55em; color:blue">Accept</za-btn>
+            </div>
+          </za-modal>
+          <script>
+            var btn = document.querySelector('za-btn')
+      var closebtn = document.querySelector('#closebtn')
+      var modal = document.querySelector('za-modal')
+      const event = new Event("OpenModal",)
+
+      btn.addEventListener('click',()=>{
+        modal.dispatchEvent(event)
+      })
+      closebtn.addEventListener('click',()=>{
+        const event = new Event("CloseModal")
+        modal.dispatchEvent(event)
+      })
+    </script>
+  </body>
+</html>
